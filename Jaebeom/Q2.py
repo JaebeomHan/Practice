@@ -1,8 +1,8 @@
 
 while(True):
-    num = int(input("양의 정수를 입력"))
+    num = int(input("양의 정수를 입력 : "))
     if (num>2100000000):
-        print("21억 넘으면 안됨")
+        print("21억 넘으면 안됨 : ")
         break
     if (num==0):
         break

@@ -28,7 +28,7 @@ while True:
                     
             new_list_result.sort(key = lambda x:(x[1], x[0]))   # 2차 배열을 오름차순으로 정렬
 
-            print("Sentence %d" % count)
+            print("< Sentence %d >" % count)
             count += 1
 
             for i in new_list_result:   # 출력...
@@ -38,7 +38,6 @@ while True:
 
 # 위에서 했던 과정 똑같이 반복
 
-print(all_sentence)
 all_length = len(all_sentence)
 all_num = 0
 all_list_result = []
@@ -56,7 +55,7 @@ for w in all_list_result:
 
 new_all_list_result.sort(key = lambda x:(x[1], x[0]))
 
-print("All Sentence")
+print("< All Sentence >")
 
 for i in new_all_list_result:
     for j in i:
