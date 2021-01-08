@@ -1,30 +1,18 @@
 
-N = str(input("높이를 입력하세요 (자연수)"))
 
-N = int(N)
+LineInput = int(input("높이 입력 : ")) # 줄 개수를 받는 변수 LineInput
+String = 0 #변수 String(문자) 정의
+StringPlus = 0 #같은 줄에 n개만큼 더한다는 것을 표현하는 변수 정의
+Blank = 0 #빈칸 개수 정하는 변수 정의
 
-sum = 0
-for n in range(N):
-    sum = sum + (n+1)
+for Lines in range(LineInput+1):
+    String = Lines #각 줄의 첫번째 글자를 설정함
 
-list_a = []
+    for Blank in range(LineInput - Lines):
+        print(end="  ")
 
-matrix = [[0 for col in range(N-1)] for row in range(N-1)]   # N-1 크기의 정사각행렬 만듦
-
-for m in range(N):  # m은 0부터 2까지 (N=3일때)
-    list_a.append([m])  # 0 1 2
-    list_b = sorted(list_a, reverse=True)   # 2 1 0
-
-    print(list_a)
-   # print(list_b)
-
-  #  matrix[m][c] = chr(65+n)
-
-  #  print(matrix)
-
-
-
-#for sum in range(sum):
- #   list_a.extend([chr(65+sum)])
-  #  str_a = "".join(list_a)
-   # print(str_a)
+    for StringPlus in range(Lines):
+        print(chr((int(String)-1)%26+65), end=" ")
+        String += LineInput - StringPlus -1
+        
+    print('')
