@@ -22,20 +22,16 @@ def order_print(new_list_result, count):
 
     new_list_result.sort(key = lambda x:(x[1], x[0]))  # 순서 지정 (숫자로 오름차순)
     print("[ Sentence %d ]" % count)
-    for i in new_list_result:
-        for j in i:
-            print(j, end=' ')
-        print()
+    for word in new_list_result:
+        print('{} : {}'.format(word[0], word[1]))
 
 ## 출력 담당하는 함수 (END 입력 시)
 def order_print_END(new_list_result):
 
     new_list_result.sort(key = lambda x:(x[1], x[0]))  # 순서 지정 (숫자로 오름차순)
     print("[ All Sentence ]")
-    for i in new_list_result:
-        for j in i:
-            print(j, end=' ')
-        print()
+    for word in new_list_result:
+        print('{} : {}'.format(word[0], word[1]))
 
 
 total_sentence = []
