@@ -1,18 +1,17 @@
 
 
-LineInput = int(input("높이 입력 : ")) # 줄 개수를 받는 변수 LineInput
-String = 0 #변수 String(문자) 정의
-StringPlus = 0 #같은 줄에 n개만큼 더한다는 것을 표현하는 변수 정의
-Blank = 0 #빈칸 개수 정하는 변수 정의
+height = int(input("높이를 입력하세요 : "))
+string = 0
+stringplus = 0
 
-for Lines in range(LineInput+1):
-    String = Lines #각 줄의 첫번째 글자를 설정함
+for line_number in range(height+1):
 
-    for Blank in range(LineInput - Lines):
-        print(end="  ")
+    for blank in range(height - line_number):
+        print(end="  ")  # 공백을 먼저 출력한다. 입력받은 높이에서 행 번호를 뺀 만큼.
+                         # 예를들면 3을 입력했으면 1행에서는 2의 공백 출력.
 
-    for StringPlus in range(Lines):
-        print(chr((int(String)-1)%26+65), end=" ")
-        String += LineInput - StringPlus -1
-        
+    for stringplus in range(line_number):
+        print(chr((int(line_number)-1)%26+65), end=" ")
+        line_number += height - stringplus -1
+
     print('')

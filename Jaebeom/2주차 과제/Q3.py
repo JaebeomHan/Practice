@@ -18,22 +18,18 @@ def make_list(sentence):
     return new_list_result
 
 ## 출력 담당하는 함수
-def order_print(new_list_result, count):
+def order_print(new_list_result, message, count):
 
     new_list_result.sort(key = lambda x:(x[1], x[0]))  # 순서 지정 (숫자로 오름차순)
-    print("[ Sentence %d ]" % count)
+    if(sentence==["END"]):
+        print("[ All Sentence ]")
+    else:
+        print("[ {0} {1} ]".format(message, count))
+   # print("[ Sentence %d ]" % count)
     for word in new_list_result:
         print('{} : {}'.format(word[0], word[1]))
 
-## 출력 담당하는 함수 (END 입력 시)
-def order_print_END(new_list_result):
-
-    new_list_result.sort(key = lambda x:(x[1], x[0]))  # 순서 지정 (숫자로 오름차순)
-    print("[ All Sentence ]")
-    for word in new_list_result:
-        print('{} : {}'.format(word[0], word[1]))
-
-
+## 여기부터가 본문
 total_sentence = []
 count_a = 1
 
@@ -45,11 +41,13 @@ while True:
         break
 
     else: # 정상 진행
+        message = "Sentence"
         total_sentence += sentence
-        order_print(make_list(sentence), count_a)
+        order_print(make_list(sentence), message, count_a)
         count_a += 1
 
 # 위에서 했던 과정 똑같이 반복
-order_print_END(make_list(total_sentence))
+message = "All Sentence"
+order_print(make_list(total_sentence), message, count_a)
 
 print("프로그램 종료")
