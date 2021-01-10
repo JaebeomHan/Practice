@@ -2,11 +2,11 @@
 def reverse_plz(num):
 
     num_length = (len(str(num))-1)
-    rev = []
+    rev = []   # rev 배열은 reverse의 약자로 입력된 숫자의 각 자릿수를 배열 형식으로 저장하는 공간입니다.
 
     while num_length >= 0 :
-        res = num // 10**(num_length)
-        rev.append(res)
+        res = num // 10**(num_length)  # res 변수는 int 형식으로 입력된 숫자를 자릿수별로 구해서 저장하는 공간입니다.
+        rev.append(res)  # rev 배열에 int 형식의 res 변수 값들이 들어갑니다.
         num = num - res * 10**(num_length)
         num_length -= 1
 
