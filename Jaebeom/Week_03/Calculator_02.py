@@ -1,4 +1,4 @@
-class Calculator:
+class Calculator: # 클래스 정의
 
     def __init__(self, first, symbol, second): # 호출자
         self.first = first
