@@ -32,7 +32,6 @@ while True:
                                              ''')
     a = Calculator( int(input("피연산자1 : ")), input("연산기호 : ") , int(input("피연산자2 : ")) )
 
-
     if (a.symbol == "+"):
         print("<결과> {} {} {} = {}".format(a.first, a.symbol, a.second, a.add()))
     if (a.symbol == "-"):
